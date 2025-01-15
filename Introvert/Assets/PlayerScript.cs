@@ -80,6 +80,7 @@ public class PlayerScript : MonoBehaviour
         tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * _bulletSpeed);
         yield return new WaitForSeconds(_shotDelay);
         canShoot = true;
+        
     }
 
     private IEnumerator AmmoRegen()
