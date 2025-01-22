@@ -13,16 +13,13 @@ public class Enemybehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     Debug.Log("Vi laver et 2d top-down wave-shooter, der bruger et ottekantet gridsystem. Spillet handler om at overleve så lang tid som muligt mod fjender, som du skal skyde, da de vil røre dig.");
-        
+     
     }
     
     // Update is called once per frame
     void Update()
     {
-        //float step = speed * Time.deltaTime;
       transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -33,8 +30,6 @@ public class Enemybehavior : MonoBehaviour
                 Destroy(collision.gameObject);
             }
             enemyHealth--;
-            
-         
         }
 
 

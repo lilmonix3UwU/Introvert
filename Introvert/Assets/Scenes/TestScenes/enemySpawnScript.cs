@@ -8,7 +8,7 @@ public class enemySpawnScript : MonoBehaviour
     //[SerializeField] GameObject[] enemyTypes; 
     public GameObject [] enemyPrefab;
     private int enemyCount;
-    private int waveNumber = 1;
+    public int waveNumber = 1;
 
     public float timeBetweenEnemySpawn;
     public float timeBetweenWaves;
@@ -17,7 +17,7 @@ public class enemySpawnScript : MonoBehaviour
 
     bool spawningWave;
     int enemiesToSpawn = 2; 
-
+        
     void Start ()
     {
      StartCoroutine (SpawnEnemyWave(waveNumber));

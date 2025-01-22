@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cffc52b13b37c9468b1552ddc5cef5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   targetPosition: {x: -0.04, y: -0.09}
   enemyHealth: 1
+  fast: 0
 --- !u!60 &-8126331228236940980
 PolygonCollider2D:
   m_ObjectHideFlags: 0
