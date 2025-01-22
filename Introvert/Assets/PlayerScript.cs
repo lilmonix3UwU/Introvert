@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private int _health;
     
     private GameObject player;
+    private GameObject enemySpawner;
 
     [SerializeField] private TextMeshPro _ammoText;
     [SerializeField] private TextMeshProUGUI _loseScreenWaveScore;
@@ -36,6 +37,7 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(AmmoRegen());
         _health = _maxHealth;
         spamPrevention = true;
+        enemySpawner = GameObject.Find("enemySpawner");
     }
 
 
@@ -63,7 +65,7 @@ public class PlayerScript : MonoBehaviour
         if (_health <= 0 && spamPrevention)
         {
             
-            //_loseScreenWaveScore.text = "Du nåede til Wave " + ;
+            _loseScreenWaveScore.text = "Du nåede til Wave " + enemySpawner.GetComponent<enemySpawnScript>().waveNumber;
             _loseScreen.SetActive(true);
             Time.timeScale = 0;
             spamPrevention = false;
