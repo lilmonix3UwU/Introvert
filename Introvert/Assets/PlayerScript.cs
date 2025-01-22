@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     
     private GameObject player;
 
-    [SerializeField] private TextMeshProUGUI _ammoText;
+    [SerializeField] private TextMeshPro _ammoText;
     [SerializeField] private TextMeshProUGUI _loseScreenWaveScore;
     [SerializeField] private GameObject _loseScreen;
 
