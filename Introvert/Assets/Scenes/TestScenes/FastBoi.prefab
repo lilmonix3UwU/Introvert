@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3628832052643157762}
   - component: {fileID: 7840554205833878081}
   - component: {fileID: 828542318421128307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FastBoi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
