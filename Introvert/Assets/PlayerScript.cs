@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,8 +42,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //rotate the player when A or D is pressed
-        if (Input.GetKeyDown(KeyCode.A)) { transform.Rotate(0, 0, 45); }
-        if (Input.GetKeyDown(KeyCode.D)) { transform.Rotate(0, 0, -45); }
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A)) { transform.Rotate(0, 0, 45); }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D)) { transform.Rotate(0, 0, -45); }
 
         // if space is pressed and shot delay has passed it shoots
         if(Input.GetKeyDown(KeyCode.Space) && canShoot) { StartCoroutine(Shoot()); }
