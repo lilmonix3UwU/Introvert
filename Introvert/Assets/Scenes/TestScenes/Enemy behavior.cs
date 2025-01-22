@@ -7,6 +7,8 @@ public class Enemybehavior : MonoBehaviour
 {
     [SerializeField] float speed = 1.0f;
     [SerializeField] Vector2 targetPosition;
+    [SerializeField] int enemyHealth;
+    [SerializeField] bool fast;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,25 @@ public class Enemybehavior : MonoBehaviour
     {
         //float step = speed * Time.deltaTime;
       transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-       
-    } 
+        
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            if (!fast)
+            {
+                Destroy(collision.gameObject);
+            }
+            enemyHealth--;
+            
+         
+        }
+
+
+        if (collision.gameObject.CompareTag("Player")|| enemyHealth <= 0)
+        { 
+         Destroy(gameObject);
+        } 
+    }
 }

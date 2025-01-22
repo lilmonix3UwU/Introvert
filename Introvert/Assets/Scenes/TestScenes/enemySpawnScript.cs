@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enemySpawnScript : MonoBehaviour
@@ -19,7 +20,8 @@ public class enemySpawnScript : MonoBehaviour
 
     void Start ()
     {
-        StartCoroutine (SpawnEnemyWave(waveNumber));
+     StartCoroutine (SpawnEnemyWave(waveNumber));
+     //Debug.Log("Vi laver et 2d top-down wave-shooter, der bruger et ottekantet gridsystem. Spillet handler om at overleve så lang tid som muligt mod fjender, som du skal skyde, da de vil røre dig.");
     }
 
 
@@ -31,14 +33,11 @@ public class enemySpawnScript : MonoBehaviour
         {
             waveNumber++;
             enemiesToSpawn++;
-            Debug.Log("NY WAVE");
             StartCoroutine(SpawnEnemyWave(waveNumber));
         }
         
-        
 
     }
-
     IEnumerator SpawnEnemyWave(int enemiesToSpawn = 2)
     {
         spawningWave = true;
@@ -49,5 +48,6 @@ public class enemySpawnScript : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenEnemySpawn);
         }
         spawningWave = false;
+        Debug.Log("Wave " + waveNumber);
     }
 }
