@@ -21,7 +21,7 @@ public class Enemybehavior : MonoBehaviour
     {
       transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -37,5 +37,18 @@ public class Enemybehavior : MonoBehaviour
         { 
          Destroy(gameObject);
         } 
+    } */
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!fast)
+        {
+            Destroy(collision.gameObject);
+        }
+        enemyHealth--;
+       
+        if (collision.gameObject.CompareTag("Player") || enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
